@@ -1,0 +1,10 @@
+/* Es para quitar el scroll */
+body {
+    overflow-x: hidden;
+}
+
+.conversor {
+    background-color: rgb(17, 17, 219);
+    color: white;
+    font-weight: bold;
+}

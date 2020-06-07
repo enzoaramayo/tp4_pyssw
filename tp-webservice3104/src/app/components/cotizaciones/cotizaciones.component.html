@@ -1,1 +1,140 @@
-<p>cotizaciones works!</p>
+<section class="row">
+  <div class="col-md-8 d-md-block d-lg-block d-none">
+    <div class="card-header text-center">
+      <h5 class="card-title">Conversor de divisas</h5>
+      <div class="card-body">
+
+        <table class="table table-hover" cellpadding="3">
+          <thead class="bg-primary">
+            <th></th>
+            <th>USD</th>
+            <th>EUR</th>
+            <th>GBP</th>
+            <th>BTC</th>
+            <th>ARS</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p>USD</p>
+                <p>Inverse</p>
+              </td>
+              <td>
+                <p>1.0000</p>
+                <p>1.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>EUR</p>
+                <p>Inverse</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>1.0000</p>
+                <p>1.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>ARS</p>
+                <p>Inverse</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>0.0000</p>
+                <p>0.0000</p>
+              </td>
+              <td>
+                <p>1.0000</p>
+                <p>1.0000</p>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- d-lg-block no oculta el compenente en tamaños grandes, d-none oculta en todos los demas tamaños <div class="col-md-4 d-md-block d-lg-block d-none">-->
+  <div class="col-md-4 col-sm-12">
+    <div class="card">
+      <div class="card-header text-center conversor">
+        Conversor de divisas
+      </div>
+      <div class="card-body bg-primary">
+
+        <form>
+          <div class="form-group">
+            <label for="txtCantidad">Cantidad</label>
+            <input type="number" class="form-control form-control-sm" id="txtCantidad" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="txtDe">De</label>
+            <select class="form-control form-control-sm">
+              <option>Peso Argentino</option>
+              <option>Dolar US</option>
+              <option>Euro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="txtA">A</label>
+            <select class="form-control form-control-sm">
+              <option>Peso Argentino</option>
+              <option>Dolar US</option>
+              <option>Euro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" readonly id="txtA">
+          </div>
+          <button type="submit" class=" col-sm-12 btn btn-warning btn-sm">Convertir</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>

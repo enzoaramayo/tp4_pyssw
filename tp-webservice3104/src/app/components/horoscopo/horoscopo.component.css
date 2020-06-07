@@ -1,0 +1,23 @@
+.media>#zodiac-sign {
+    width: 5em;
+}
+
+#zodiac-card {
+    width: 10em;
+    height: 10em;
+}
+
+.tittle-card {
+    color: white;
+    font: 20px Calibri bold;
+    background: rgb(233, 150, 201);
+}
+
+section{
+    clear: both;
+    margin-top: 30px;
+}
+
+h5{
+    font-weight: bold;
+}

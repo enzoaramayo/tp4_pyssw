@@ -1,1 +1,103 @@
-<p>coronavirus works!</p>
+<div class="card">
+  <div class="card-header text-center">
+    Estadísticas de Coronavirus
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label for="txtDe" class="col-md-2">País</label>
+              <select class="form-control form-control-sm col-md-10">
+                <option>Argentina</option>
+                <option>Bolivia</option>
+                <option>Brasil</option>
+                <option>Chile</option>
+                <option>Paraguay</option>
+                <option>Peru</option>
+                <option>Uruguay</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Casos confirmados</label>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Curados</label>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Fallecidos</label>
+            </div>
+          </div>
+          <button type="submit" class=" col-sm-12 btn btn-primary btn-sm">Consultar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<br>
+<div class="alert alert-info text-center" role="alert">
+  <h4>Paises afectados</h4>
+</div>
+<div class="table-responsive">
+  <table class="table table-hover" cellpadding="6">
+    <thead>
+      <tr>
+        <th>País</th>
+        <th>Infectados</th>
+        <th>Curados</th>
+        <th>Fallecidos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Argentina</td>
+        <td>2.930</td>
+        <td>708</td>
+        <td>134</td>
+      </tr>
+      <tr>
+        <td>Bolivia</td>
+        <td>564</td>
+        <td>31</td>
+        <td>33</td>
+      </tr>
+      <tr>
+        <td>Brasil</td>
+        <td>39.144</td>
+        <td>22.130</td>
+        <td>2.484</td>
+      </tr>
+      <tr>
+        <td>Chile</td>
+        <td>13000</td>
+        <td>7000</td>
+        <td>180</td>
+      </tr>
+      <tr>
+        <td>Paraguay</td>
+        <td>228</td>
+        <td>85</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>Perú</td>
+        <td>27909</td>
+        <td>8000</td>
+        <td>700</td>
+      </tr>
+      <tr>
+        <td>Uruguay</td>
+        <td>600</td>
+        <td>375</td>
+        <td>15</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+.card img {
+    width: 24em;
+    height: 15em;
+}
+
+#anime-img {
+    width: 19em;
+    height: 19em;
+}
+
+.card>a>#publicidad {
+    width: 15em;
+    height: 25em;
+}
+
+.card-title-pers {
+    color: rgb(96, 96, 243);
+}
+
+/* Para mostrar las cards en columna */
+.card-group {
+    display: table;
+}
