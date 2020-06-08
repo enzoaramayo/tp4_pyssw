@@ -1,103 +1,131 @@
-<div class="card">
-  <div class="card-header text-center">
-    Estadísticas de Coronavirus
-  </div>
-  <div class="card-body">
-    <form>
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="col-md-12">
-            <div class="form-group row">
-              <label for="txtDe" class="col-md-2">País</label>
-              <select class="form-control form-control-sm col-md-10">
-                <option>Argentina</option>
-                <option>Bolivia</option>
-                <option>Brasil</option>
-                <option>Chile</option>
-                <option>Paraguay</option>
-                <option>Peru</option>
-                <option>Uruguay</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Casos confirmados</label>
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Curados</label>
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Fallecidos</label>
-            </div>
-          </div>
-          <button type="submit" class=" col-sm-12 btn btn-primary btn-sm">Consultar</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
+<div class="align-content-center">
 
-<br>
-<div class="alert alert-info text-center" role="alert">
-  <h4>Paises afectados</h4>
-</div>
-<div class="table-responsive">
-  <table class="table table-hover" cellpadding="6">
-    <thead>
-      <tr>
-        <th>País</th>
-        <th>Infectados</th>
-        <th>Curados</th>
-        <th>Fallecidos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Argentina</td>
-        <td>2.930</td>
-        <td>708</td>
-        <td>134</td>
-      </tr>
-      <tr>
-        <td>Bolivia</td>
-        <td>564</td>
-        <td>31</td>
-        <td>33</td>
-      </tr>
-      <tr>
-        <td>Brasil</td>
-        <td>39.144</td>
-        <td>22.130</td>
-        <td>2.484</td>
-      </tr>
-      <tr>
-        <td>Chile</td>
-        <td>13000</td>
-        <td>7000</td>
-        <td>180</td>
-      </tr>
-      <tr>
-        <td>Paraguay</td>
-        <td>228</td>
-        <td>85</td>
-        <td>9</td>
-      </tr>
-      <tr>
-        <td>Perú</td>
-        <td>27909</td>
-        <td>8000</td>
-        <td>700</td>
-      </tr>
-      <tr>
-        <td>Uruguay</td>
-        <td>600</td>
-        <td>375</td>
-        <td>15</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="card row-col-md-8">
+    <div class="card-header text-center">
+      Estadísticas de Coronavirus
+    </div>
+    <div class="card-body justify-content-center">
+
+
+      <form #formEstadisticas="ngForm" class="col-12 col-md-8 justify-content-center">
+        <div class="form-group row">
+          <label for="pais">Seleccione un pais:</label>
+          <select class="custom-select" id="pais" name="pais" [(ngModel)]="paisSeleccionado" required #pais="ngModel">
+            <option *ngFor="let pais of paises" [ngValue]="pais.country">{{ pais.country | titlecase }}</option>
+          </select>
+          <div *ngIf="pais.invalid" class="alert alert-danger col-auto">
+            <div *ngIf="pais.errors.required">
+              Debe seleccionar un país
+            </div>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="confirmados" name="confirmados" #confirmados="ngModel"
+              [(ngModel)]="opcionCasosConfirmados">
+            <label class="form-check-label" for="gridCheck1">Casos Confirmados</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="curados" name="curados" #curados="ngModel"
+              [(ngModel)]="opcionCurados">
+            <label class="form-check-label" for="gridCheck1">Curados</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="fallecidos" name="fallecidos" #fallecidos="ngModel"
+              [(ngModel)]="opcionFallecidos">
+            <label class="form-check-label" for="gridCheck1">Fallecidos</label>
+          </div>
+          <div *ngIf="confirmados.untouched && curados.untouched && fallecidos.untouched "
+            class="alert alert-danger col-auto">
+            Seleccione un opción
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electronico:</label>
+          <input type="email" id="correo" name="correo" #correo="ngModel" class="form-control" required
+            placeholder="example@mail.com"
+            pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"
+            [(ngModel)]="email.to">
+          <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="alert alert-danger col-auto">
+            <div *ngIf="correo.errors.required">
+              Debe ingresar su correo
+            </div>
+            <div *ngIf="correo.errors.pattern">
+              Correo no valido
+            </div>
+          </div>
+        </div>
+        <div class=" form-group">
+          <button type="submit" class="btn btn-dark" (click)="enviarCorreo()"
+            [disabled]="!formEstadisticas.valid">Enviar</button>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+
+  <br>
+  <div class="alert alert-info text-center" role="alert">
+    <h4>Paises afectados</h4>
+  </div>
+
+  <section class="col-12 col-md-8">
+    <h4>Estad&iacute;sticas</h4>
+    <table class="table table-responsive-xl text-right">
+      <thead>
+        <tr class="encabezado h4">
+          <th class="small border-0 text-left">
+            Ubicación
+          </th>
+          <th class="small border-0">
+            Nuevos Casos
+          </th>
+          <th class="small border-0">
+            Fallecidos Hoy
+          </th>
+          <th class="small border-0">
+            Casos Confirmados
+          </th>
+          <th class="small border-0">
+            Curados
+          </th>
+          <th class="small border-0">
+            Fallecidos
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pais of estadisticas">
+          <td class="text-left">
+            <img src="{{ pais.image }}" class="img-fluid" alt="imagen-pais"> {{ pais.country | titlecase }}
+          </td>
+          <td>
+            {{ pais.newCases }}
+          </td>
+          <td>
+            {{ pais.newDeaths }}
+          </td>
+          <td>
+            {{ pais.totalCases }}
+          </td>
+          <td>
+            {{ pais.totalRecovered }}
+          </td>
+          <td>
+            {{ pais.totalDeaths }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
 </div>
