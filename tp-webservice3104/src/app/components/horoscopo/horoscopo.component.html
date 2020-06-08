@@ -3,335 +3,48 @@
 </section>
 <section class="row">
 
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/aries.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Aries
+  <div class="col-6 col-md-4 float-left" *ngFor="let signo of signos">
+    <a href="#ancla1" class="stretched-link"></a>
+    <article class="card mb-3 border-0">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{signo.image}}" class="img-fluid" alt="signo-image">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ signo.nameSigno | uppercase }}</h5>
+            <p class="card-text"><small class="text-muted">{{ signo.date_range }}</small></p>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/tauro.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Tauro
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/gemini.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Geminis
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/cancer.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Cancer
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/leo.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Leo
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/virgo.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Virgo
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/libra.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Libra
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/scorpio.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Escorpio
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/sagitario.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Sagitario
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/capricornio.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Capricornio
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/acuario.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Acuario
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-6">
-    <div class="media">
-      <img src="assets/piscis.jpg" id="zodiac-sign" alt="...">
-      <div class="media-body">
-        <div class="alert alert-success" role="alert">
-          Piscis
-        </div>
-      </div>
-    </div>
-  </div>
-  
+
 </section>
 <!-- Second section-->
-<section class="row">
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Aries</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Aries</h5>
-            Dominados por la cabeza, que les hace ir siempre hacia adelante, los Aries se
-            caracterizan por ser los más valientes, entusiastas, optimistas, apasionados y honestos
-            del zodíaco, uno de los signos más activos, aunque entre sus debilidades se cuentan la
-            impaciencia y quizá ser demasiado impulsivos.
-          </div>
-          <img src="assets/aries.jpg" id="zodiac-card" alt="...">
+<section class="row" *ngFor="let signo of signos">
+  <article class="card border-0 mb-0 pb-0 pt-0 mt-0">
+    <a name="ancla1"></a>
+    <div class="card-header fondo-titulo  vertical-align-center pb-0 pl-4">
+      <h3 class="mb-0 texto">{{ signo.nameSigno | titlecase }}</h3>
+      <p class="texto">{{ signo.date_range }}</p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-11 col-sm-7 col-md-10 text-left pl-4">
+          <p class="card-text h5"> {{ signo.description }} </p>
+          <p class="card-text"> Compatibility: {{ signo.compatibility }} </p>
+          <p class="card-text"> Lucky Color: {{ signo.color }} </p>
+          <p class="card-text"> Lucky Number: {{ signo.lucky_number }} </p>
+        </div>
+        <div class="d-none d-sm-block col-sm-5 col-md-2 my-auto">
+          <img class="card-img-right img-fluid rounded-circle h-75" class="img-fluid" src="{{ signo.image }}"
+            alt="acuario">
+        </div>
+        <div class="col">
         </div>
       </div>
     </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Tauro</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Tauro</h5>
-            Le gusta lo concreto y disfruta de los bienes materiales, el lujo y lo relacionado con
-            lo terrenal; es racional y algo materialista. ... Como buen signo de tierra está muy
-            apegado a la naturaleza y valora el hogar y la familia.
-          </div>
-          <img src="assets/tauro.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Geminis</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Geminis</h5>
-            Géminis es el signo de los gemelos y, como tal, su carácter es doble, bastante complejo
-            y contradictorio. Por un lado es versátil, pero por el otro puede ser insincero. Suelen
-            tener elegancia y caer en los errores de los jóvenes. Tienen la felicidad, el
-            egocentrismo, la imaginación y la inquietud de los niños..
-          </div>
-          <img src="assets/gemini.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Cancer</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Cancer</h5>
-            Los Cáncer son todo sentimientos. Leales, emocionales y muy sensibles, adoran su hogar y
-            su familia, a la que se sienten muy apegados, aunque también cuidan mucho la relación
-            laboral, en cuyo entorno se considera como en familia.
-          </div>
-          <img src="assets/cancer.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Leo</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Leo</h5>
-            No suelen tener dudas sobre qué hacer. Son líderes sin complicaciones, saben dónde
-            quieren llegar y ponen todo su empeño, energía y creatividad en conseguir su objetivo.
-            No temen los obstáculos, más bien crecen ante ellos.
-          </div>
-          <img src="assets/leo.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Virgo</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Virgo</h5>
-            Suelen estar dominados por una timidez que en ocasiones les impide expresar todo el
-            potencial de amabilidad, capacidad analítica y practicidad que llevan dentro. Les
-            encantan los animales, el orden y la limpieza, a la vez que detestan la vulgaridad y
-            convertirse en centro de atracción.
-          </div>
-          <img src="assets/virgo.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Libra</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Libra</h5>
-            Quienes han nacido bajo el signo de Libra poseen el don de la diplomacia. Son muy
-            sociables y evitan las confrontaciones, buscando siempre el camino para el
-            entendimiento, con armonía y acciones positivas.
-          </div>
-          <img src="assets/libra.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Escorpio</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Escorpio</h5>
-            Su voluntad es férrea, muy vitalista y con fuerte sexualidad, nunca resulta indiferente
-            ni en el amor ni en el trabajo.
-          </div>
-          <img src="assets/scorpio.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Sagitario</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Sagitario</h5>
-            El elemento fuego que rige su vida hace que los Sagitarianos sean personas apasionadas,
-            generosas y con un gran sentido del humor, a quienes encanta viajar y el contacto con la
-            naturaleza
-          </div>
-          <img src="assets/sagitario.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Capricornio</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Capricornio</h5>
-            Los Capricornio destacan por su auto control y disciplina, que los hacen sumamente
-            responsables, aunque este grado sumo de responsabilidad les hace estar en ocasiones en
-            desacuerdo con el mundo que les rodea.
-          </div>
-          <img src="assets/capricornio.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Acuario</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Acuario</h5>
-            La originalidad de los nacidos bajo el signo de Acuario, los convierte en personajes
-            notables para la sociedad. Aunque son poco expresivos y bastante intransigentes, su
-            vertiente humanitaria y empática puede con todo.
-          </div>
-          <img src="assets/acuario.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-md-12 col-lg-12">
-    <div class="card">
-      <div class="card-header tittle-card">Piscis</div>
-      <div class="card-body">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">Piscis</h5>
-            Los nativos de Piscis son los más intuitivos y empáticos del zodíaco, aunque estas
-            cualidades a veces pueden ir en su contra, como también les entorpece sus avances su
-            extrema sensibilidad, que les paraliza cuando se ven afectados por situaciones injustas
-            o dramáticas.
-          </div>
-          <img src="assets/piscis.jpg" id="zodiac-card" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
+  </article>
+
 </section>
