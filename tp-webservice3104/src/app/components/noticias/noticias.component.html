@@ -1,60 +1,19 @@
 <h2 class="offset-md-3">Últimas noticias</h2>
 <div class="row">
   <section class="col-md-9">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <img src="assets/españa.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="#">
-              <h5><span class="badge badge-danger">CORONAVIRUS - ESPAÑA</span></h5>
-            </a>
-            <p class="card-text">El regreso parcial al trabajo en España levanta criticas.</p>
+      <div class="row mb-2">
+        <article class="col-sm-6 card border-0" *ngFor="let noticia of noticias">
+          <img class="card-img-top" src="{{ noticia.img }}" class="img-fluid mb-2" alt="">
+          <div class="card-block">
+            <h4 class="card-title">
+              <p class="descripcion text-light pl-1 pr-1"> {{ noticia.cap }} </p>
+              <a class="" href="#" class="stretched-link">
+                <h6 class="text-dark">{{ noticia.tit }}</h6>
+              </a>
+            </h4>
           </div>
-        </div>
+        </article>
       </div>
-      <div class="col-md-6">
-        <div class="card">
-
-          <img src="assets/venezuela.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="#">
-              <h5><span class="badge badge-danger">MATERIAS PRIMAS</span></h5>
-            </a>
-            <p class="card-text">Venezuela potencia petrolera se queda sin gasolina.</p>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <img src="assets/india.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="#">
-              <h5><span class="badge badge-danger">ENFOQUE - INTERNACIONAL</span></h5>
-            </a>
-            <p class="card-text">La epidemia llega a infraviviendas y zonas rurales de la India.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <img src="assets/tour.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="#">
-              <h5><span class="badge badge-danger">CRONICAS DEPORTIVAS</span></h5>
-            </a>
-            <p class="card-text">La vuelta abre la puerta al tour.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </section>
   <aside class="col-md-3">
     <div class="card text-justify">
