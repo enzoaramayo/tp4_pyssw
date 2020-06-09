@@ -30,11 +30,11 @@ export class CorreoService {
               email: email.to
             }
           ],
-          subject: 'Estadisticas Covid 19 - PSW2020'
+          subject: 'Estadisticas Coronavirus - PYSSW2020'
         }
       ],
       from: {
-        email: 'fernandoemanuelmp@gmail.com'
+        email: 'solojuegojax@gmail.com'
       },
       content: [
         {
