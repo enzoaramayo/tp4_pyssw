@@ -44,7 +44,7 @@ export class CorreoService {
       ]
     };
 
-    // tslint:disable-next-line: max-line-length
+    
     return this._http.post('https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send', JSON.stringify(body), httpOptions).subscribe(
       (result) => {
 
